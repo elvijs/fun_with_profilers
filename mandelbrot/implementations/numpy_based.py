@@ -17,6 +17,7 @@ def main(grid_side_size: int, max_iter: int) -> np.ndarray:
 
 def plot(data: np.ndarray) -> None:
     import matplotlib
+
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
 
@@ -24,7 +25,7 @@ def plot(data: np.ndarray) -> None:
     plt.savefig("numpy_mandelbrot.png")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     args = mandelbrot.parsed_mandelbrot_args()
     result = main(args.grid_side_size, args.max_iter)
     if args.plot:

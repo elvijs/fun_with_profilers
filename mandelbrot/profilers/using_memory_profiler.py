@@ -5,8 +5,7 @@ import memory_profiler
 
 import mandelbrot
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     args = mandelbrot.parsed_mandelbrot_args()
 
     for impl in mandelbrot.all_implementations():

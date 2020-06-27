@@ -1,6 +1,6 @@
 import argparse
 from dataclasses import dataclass
-from typing import Sequence, Protocol, Any, NewType
+from typing import Any, NewType, Protocol, Sequence
 
 ImplementationID = NewType("ImplementationID", str)
 
@@ -24,22 +24,20 @@ def parsed_mandelbrot_args() -> ParsedArgs:
     parser.add_argument(
         "grid_side_size",
         help="The number of points along each of the axis of the grid. "
-             "We will always only consider points in "
-             "the axis-parallel square with two corners in [-1, -1] and [1, 1]. "
-             "We will thus consider a total of grid_side_size*grid_side_size points.",
+        "We will always only consider points in "
+        "the axis-parallel square with two corners in [-1, -1] and [1, 1]. "
+        "We will thus consider a total of grid_side_size*grid_side_size points.",
         type=int,
     )
     parser.add_argument(
         "max_iter",
         help="The maximum number of iterations per point. "
-             "If the recursion hasn't achieved the escape condition by this point, "
-             "then the point is declared to be in the Mandelbrot set.",
+        "If the recursion hasn't achieved the escape condition by this point, "
+        "then the point is declared to be in the Mandelbrot set.",
         type=int,
     )
     parser.add_argument(
-        "-plot",
-        help="Store a plot?",
-        action="store_true",
+        "-plot", help="Store a plot?", action="store_true",
     )
     args = parser.parse_args()
 

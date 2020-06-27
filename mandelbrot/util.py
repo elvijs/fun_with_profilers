@@ -2,9 +2,9 @@ import importlib
 import os
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Sequence, List
+from typing import List, Sequence
 
-from mandelbrot.api import MandelbrotImplementation, ImplementationID
+from mandelbrot.api import ImplementationID, MandelbrotImplementation
 
 
 @dataclass
@@ -17,7 +17,11 @@ class Implementation:
 def all_implementation_paths() -> Sequence[Path]:
     this_file = os.path.realpath(__file__)
     implementations_folder = Path(this_file).parent / "implementations"
-    return list(path for path in implementations_folder.glob("*.py") if path.name != "__init__.py")
+    return list(
+        path
+        for path in implementations_folder.glob("*.py")
+        if path.name != "__init__.py"
+    )
 
 
 def all_implementations() -> Sequence[Implementation]:
@@ -45,14 +49,14 @@ def all_implementations() -> Sequence[Implementation]:
             Implementation(
                 id_=ImplementationID(module_name),
                 callable=implementation_callable,
-                fully_qualified_name=f"{fully_qualified_module}.main"
+                fully_qualified_name=f"{fully_qualified_module}.main",
             )
         )
 
     return ret
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     for script in all_implementation_paths():
         print(script)
 
