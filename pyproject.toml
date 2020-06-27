@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "mandelbrot"
+version = "0.1.0"
+description = "Playing around with profilers via the Mandelbrot set computation problem"
+authors = ["elvijs <elvijsdr@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+numpy = "^1.18.5"
+matplotlib = "^3.2.2"
+line_profiler = "^3.0.2"
+ipython = "^7.15.0"
+guppy3 = "^3.0.10"
+pympler = "^0.8"
+memory_profiler = "^0.57.0"
+numexpr = "^2.7.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.4.3"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
