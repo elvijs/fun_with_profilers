@@ -1,4 +1,7 @@
-""" Simple timing of Python scripts in :mod:`mandelbrot.implementations` using :mod:`timeit`. """
+"""
+Simple timing of Python scripts in :mod:`mandelbrot.implementations`
+using :mod:`timeit`.
+"""
 
 import statistics
 import timeit
@@ -18,6 +21,4 @@ if __name__ == "__main__":
         )
         mean = statistics.mean(timings)
         stdev = statistics.stdev(timings)
-        print(
-            f"{impl.id_} timing: {mean:.2} (stdev: {stdev:.2}) over {num_runs} runs"
-        )
+        print(f"{impl.id_} timing: {mean:.2} (stdev: {stdev:.2}) over {num_runs} runs")

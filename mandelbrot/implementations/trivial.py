@@ -24,10 +24,9 @@ def main(grid_side_size: int, max_iter: int) -> TrivialMandelbrotOutput:
     for i in range(grid_side_size):  # fills the i-th row
         row_i = []
         for j in range(grid_side_size):
-            # compute the (i, j)-th grid location in the axis-parallel grid between [-1, -1] and [1, 1]
-            c_ij = complex(
-                2 * i / grid_side_size - 1, 2 * j / grid_side_size - 1
-            )
+            # compute the (i, j)-th grid location in the axis-parallel grid
+            # between [-1, -1] and [1, 1]
+            c_ij = complex(2 * i / grid_side_size - 1, 2 * j / grid_side_size - 1)
             row_i.append(eval_mandelbrot_escape(c_ij, max_iter=max_iter))
         rows.append(row_i)
 

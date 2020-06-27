@@ -1,5 +1,6 @@
 """
-Line-by-line profiling of RAM use of Python scripts in :mod:`mandelbrot.implementations` using :mod:`memory_profiler`.
+Line-by-line profiling of RAM use of Python scripts in
+:mod:`mandelbrot.implementations` using :mod:`memory_profiler`.
 """
 import memory_profiler
 
@@ -13,7 +14,10 @@ if __name__ == "__main__":
 
         profile = memory_profiler.LineProfiler()
         profile.add_function(impl.callable)
-        cmd = f"{impl.fully_qualified_name}(grid_side_size={args.grid_side_size}, max_iter={args.max_iter})"
+        cmd = (
+            f"{impl.fully_qualified_name}(grid_side_size={args.grid_side_size}, "
+            f"max_iter={args.max_iter})"
+        )
         global_ns = globals()
         local_ns = locals()
         profile.runctx(cmd, global_ns, local_ns)

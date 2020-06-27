@@ -24,13 +24,15 @@ black = "^19.10b0"
 isort = "^4.3.21"
 
 [tool.taskipy.tasks]
-all_checks = "task test && task check_format && task mypy"
+all_checks = "task test && task check_format && task static_checks"
 test = "pytest tests"
+static_checks = "task mypy && task lint"
 mypy = "mypy --ignore-missing-imports mandelbrot"
-black = "black -l 80 mandelbrot"
-isort = "isort --atomic mandelbrot/**/*.py"
+lint = "flake8 --max-line-length 88 mandelbrot"
 format = "task black && task isort"
 check_format = "task black --check && task isort --diff"
+black = "black mandelbrot"
+isort = "isort --atomic mandelbrot/**/*.py"
 
 [build-system]
 requires = ["poetry>=0.12"]

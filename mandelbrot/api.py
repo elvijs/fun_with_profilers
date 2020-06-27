@@ -1,6 +1,6 @@
 import argparse
 from dataclasses import dataclass
-from typing import Any, NewType, Protocol, Sequence
+from typing import Any, NewType, Protocol
 
 ImplementationID = NewType("ImplementationID", str)
 
@@ -42,7 +42,5 @@ def parsed_mandelbrot_args() -> ParsedArgs:
     args = parser.parse_args()
 
     return ParsedArgs(
-        grid_side_size=args.grid_side_size,
-        max_iter=args.max_iter,
-        plot=args.plot,
+        grid_side_size=args.grid_side_size, max_iter=args.max_iter, plot=args.plot,
     )

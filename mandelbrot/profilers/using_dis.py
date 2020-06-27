@@ -1,4 +1,7 @@
-""" CPython Bytecode display for Python scripts in :mod:`mandelbrot.implementations` using :mod:`dis`. """
+"""
+CPython Bytecode display for Python scripts in :mod:`mandelbrot.implementations`
+using :mod:`dis`.
+"""
 import dis
 
 import mandelbrot

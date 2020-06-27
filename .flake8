@@ -1,0 +1,4 @@
+[flake8]
+exclude =
+    # We don't care that the imports are unused in the package definition
+    */__init__.py

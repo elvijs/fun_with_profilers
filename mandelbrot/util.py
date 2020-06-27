@@ -34,7 +34,8 @@ def all_implementations() -> Sequence[Implementation]:
             module = importlib.import_module(fully_qualified_module)
         except ImportError as err:
             raise Exception(
-                f"Could not import an expected Mandelbrot implementation in module {fully_qualified_module}"
+                f"Could not import an expected Mandelbrot implementation "
+                f"in module {fully_qualified_module}"
             ) from err
 
         try:
