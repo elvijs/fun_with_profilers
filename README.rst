@@ -32,6 +32,7 @@ Profilers:
 Mandelbrot implementations:
 
 * A pure CUDA version, maybe using `PyCUDA <https://documen.tician.de/pycuda/>`_?
+  Or maybe `cupy <https://docs-cupy.chainer.org/en/stable/>`_?
 * the naive implementation, but threaded
 * the naive implementation, but multi-process
 * C implementations, see Chapter 7 in "High Performance Python".
