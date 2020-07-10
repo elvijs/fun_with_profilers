@@ -33,7 +33,7 @@ def main(grid_side_size: int, max_iter: int) -> TrivialMandelbrotOutput:
     return rows
 
 
-def plot(data: TrivialMandelbrotOutput) -> None:
+def plot(data: TrivialMandelbrotOutput, save_to="trivial_mandelbrot.png") -> None:
     import matplotlib
 
     matplotlib.use("Agg")
@@ -41,7 +41,7 @@ def plot(data: TrivialMandelbrotOutput) -> None:
 
     as_nparray = np.array(data)
     plt.imshow(as_nparray, extent=[-1, 1, -1, 1], interpolation="bicubic")
-    plt.savefig("trivial_mandelbrot.png")
+    plt.savefig(save_to)
 
 
 if __name__ == "__main__":
